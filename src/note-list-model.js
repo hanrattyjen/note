@@ -3,7 +3,7 @@
 (function(exports) {
 
   function List(){
-   this.notes = []
+   this.notes = [];
   }
 
   List.prototype.addNote = function (note) {
@@ -11,12 +11,11 @@
   };
 
   List.prototype.showAllNotes = function () {
-   var arrayLength = this.notes.length
-   for (var i = 0; i < arrayLength; i++) {
-     return(this.notes[i])
+    return this.notes;
    }
   };
 
   exports.List = List;
 
-  })(this);
+  
+})(this);

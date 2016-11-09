@@ -21,6 +21,6 @@ function showsAllNotesInTheList() {
   assert.isTrue(list.showAllNotes() === note && note2);
 };
 
-showsAllNotesInTheList()
-addsNotesToArray()
+showsAllNotesInTheList();
+addsNotesToArray();
 emptyListOfNotesUponInstantiation();

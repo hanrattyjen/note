@@ -6,10 +6,15 @@
     this.viewList = list.showAllNotes();
   }
 
-  View.prototype.convertToHTML = function (view.viewList) {
-   return "<ul><li><div>" + list + "</div></li></ul>";
+  View.prototype.convertToHTML = function() {
+   htmlString = "<ul>";
+   for (var i = 0; i < this.viewList.length; i++) {
+     htmlString += "<li><div>" + this.viewList[i] + "</div></li>;"
+   }
+   htmlString += "</ul>";
+   return htmlString;
+   console.log(htmlString);
   };
 
-exports.View = View;
-
+  exports.View = View;
 })(this);
