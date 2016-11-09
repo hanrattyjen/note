@@ -2,11 +2,12 @@
 
 (function(exports) {
   function NoteList() {
-    this.notes = []
+    this.notes = [];
   }
 
   NoteList.prototype.addNote = function(text) {
-    var note = new Note(text);
+    var noteId = this.notes.length;
+    var note = new Note(noteId, text);
     this.notes.push(note);
   };
 

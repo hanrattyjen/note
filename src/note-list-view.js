@@ -24,6 +24,5 @@
     return noteSubstring;
   }
 
-
   exports.NoteView = NoteView;
 })(this);
