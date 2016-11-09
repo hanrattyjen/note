@@ -20,11 +20,11 @@ function testNoteLessThanTwentyCharacters() {
 
   var noteView = new NoteView(noteList);
 
-  if (noteView.restrictLength() !== ["This note is alot l"]) {
-    console.log(noteView.restrictLength());
-    console.log("Fail");
+  if (noteView.restrictLength()[0] !== "This note is alot l") {
+    console.log(noteView.restrictLength()[0]);
+    console.log("Fail testNoteLessThanTwentyCharacters");
   } else {
-    console.log("Pass");
+    console.log("Pass testNoteLessThanTwentyCharacters");
   }
 }
 
