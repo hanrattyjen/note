@@ -2,7 +2,8 @@
 
 (function(exports) {
   function NoteController(view) {
-    this.htmlBody = view.html();
+    this.subString = view.restrictLength();
+    this.htmlBody = view.html(this.subString);
   }
 
   NoteController.prototype.showList = function () {

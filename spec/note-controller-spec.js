@@ -5,6 +5,7 @@ function testNoteControllerIsInstantiated() {
   noteList.addNote("Hello Glasgae");
   var noteView = new NoteView(noteList);
   var noteController = new NoteController(noteView);
+
   noteController.showList();
 
   if(noteController.htmlBody !== "<ul><li><div>Hello Glasgae</div></li></ul>") {
