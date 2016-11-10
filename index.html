@@ -6,7 +6,21 @@
     </head>
   <body>
     <div id='note'>Note title</div>
+
+
     <div id="note-detail">Note goes here</div>
+
+    <div>
+      <form action="#notes/new" method="post">
+          <fieldset>
+            <label for="note">
+              Note: <input id="text" type="textarea" name="note" required>
+            </label>
+            <button type="submit">Submit</button>
+          </fieldset>
+      </form>
+  </div>
+
     <script src="src/note-model.js"></script>
     <script src="src/note-list-model.js"></script>
     <script src="src/note-list-view.js"></script>
