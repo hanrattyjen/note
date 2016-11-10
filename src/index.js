@@ -2,12 +2,10 @@
 
 var noteList = new NoteList();
 
-noteList.addNote("Favourite drink: seltzer");
-noteList.addNote("Favourite food: eggs");
-noteList.addNote("Favourite animal: pig");
-noteList.addNote("Favourite planet: mars");
+ noteList.addNote("Favourite drink: seltzer");
+ noteList.addNote("Favourite food: eggs");
 
 var noteView = new NoteView();
 var noteController = new NoteController(noteView, noteList);
+noteController.addEventListeners();
 noteController.showList();
-noteController.makeUrlChangeShowNotesforCurrentPage();
