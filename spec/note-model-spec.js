@@ -2,8 +2,8 @@
 
 function testNoteReturnsText() {
   var note = new Note(0, "Hello World");
-  assert.isTrue(note.returnText() === "Hello World");
-  assert.isTrue(note.returnId() === 0);
+  assert.isTrue(note.getText() === "Hello World");
+  assert.isTrue(note.getId() === 0);
 };
 
 testNoteReturnsText();

@@ -6,11 +6,11 @@
     this.text = text;
   }
 
-  Note.prototype.returnText = function () {
+  Note.prototype.getText = function () {
     return this.text;
   };
 
-  Note.prototype.returnId = function() {
+  Note.prototype.getId = function() {
     return this.index;
   }
 

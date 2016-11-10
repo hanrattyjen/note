@@ -11,7 +11,7 @@
     this.notes.push(note);
   };
 
-  NoteList.prototype.returnNotes = function() {
+  NoteList.prototype.getNotes = function() {
     return this.notes;
   };
 

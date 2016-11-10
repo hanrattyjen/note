@@ -2,7 +2,7 @@
 
 (function(exports) {
   function NoteView(list) {
-    this.notes = list.returnNotes();
+    this.notes = list.getNotes();
   }
 
   NoteView.prototype.getNoteListHTML = function(noteList) {
@@ -17,7 +17,7 @@
   NoteView.prototype.getNoteTitleList = function() {
     var noteTitleList = [];
     for (var i = 0; i < this.notes.length; i++) {
-      var noteTitle = this.notes[i].returnText().substr(0, 19);
+      var noteTitle = this.notes[i].getText().substr(0, 19);
       noteTitleList.push(noteTitle);
     }
     return noteTitleList;
