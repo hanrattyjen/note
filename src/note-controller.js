@@ -1,31 +1,32 @@
 'use strict';
 
 (function(exports) {
-  function NoteController(view) {
-    this.noteTitleList = view.getNoteTitleList();
-    this.htmlBody = view.getNoteListHTML(this.noteTitleList);
+  function NoteController(view, noteList) {
+    this.noteList = noteList;
+    this.noteTitleList = view.getNoteTitleList(noteList.getNotes());
+    this.htmlBody = view.getNoteListHTML(this.noteTitleList.getNotes());
   }
 
   NoteController.prototype.makeUrlChangeShowNotesforCurrentPage = function() {
-    window.addEventListener("hashchange", showClickedNote());
+    window.onhashchange = showClickedNote;
   };
 
-  NoteController.prototype.showClickedNote = function() {
-    showSingleNote(getNoteFromUrl(window.location));
+  function showClickedNote() {
+    showSingleNote(getNoteFromUrl());
   };
 
-  NoteController.prototype.getNoteFromUrl = function(location) {
+  function getNoteFromUrl() {
     var noteId = location.hash.split("#notes/")[1];
     return noteId;
   };
 
-  NoteController.prototype.showSingleNote = function(noteId) {
-    var note = new Note(noteId, text);
-    document.getElementbyId(noteId).innerHTML = note;
+  function showSingleNote(noteId) {
+    var note = noteList.getNotes()[noteId].getText();
+    document.getElementById('note-detail').innerHTML = note;
   };
 
   NoteController.prototype.showList = function () {
-      document.getElementById('note').innerHTML = this.htmlBody;
+    document.getElementById('note').innerHTML = this.htmlBody;
   };
 
   exports.NoteController = NoteController;
