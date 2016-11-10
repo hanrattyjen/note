@@ -2,8 +2,8 @@
 
 (function(exports) {
   function NoteController(view) {
-    this.subString = view.restrictLength();
-    this.htmlBody = view.html(this.subString);
+    this.noteTitleList = view.getNoteTitleList();
+    this.htmlBody = view.getNoteListHTML(this.noteTitleList);
   }
 
   NoteController.prototype.makeUrlChangeShowNotesforCurrentPage = function() {

@@ -5,23 +5,22 @@
     this.notes = list.returnNotes();
   }
 
-  NoteView.prototype.html = function(noteSubstring) {
-    var htmlString = "<ul>";
-    for (var i = 0; i < noteSubstring.length; i++) {
-      htmlString += "<li>" + "<a href=\"#notes/" + i + "\"><div>" + noteSubstring[i] + "</div></a></li>";
+  NoteView.prototype.getNoteListHTML = function(noteList) {
+    var noteListHTML = "<ul>";
+    for (var i = 0; i < noteList.length; i++) {
+      noteListHTML += "<li>" + "<a href=\"#notes/" + i + "\"><div>" + noteList[i] + "</div></a></li>";
     }
-    htmlString += "</ul>";
-    return htmlString;
+    noteListHTML += "</ul>";
+    return noteListHTML;
   }
 
-  NoteView.prototype.restrictLength = function() {
-    var noteSubstring = [];
+  NoteView.prototype.getNoteTitleList = function() {
+    var noteTitleList = [];
     for (var i = 0; i < this.notes.length; i++) {
-      var singleNote = (this.notes[i].returnText());
-      var singleNoteRestrict = singleNote.substr(0, 19);
-      noteSubstring.push(singleNoteRestrict);
+      var noteTitle = this.notes[i].returnText().substr(0, 19);
+      noteTitleList.push(noteTitle);
     }
-    return noteSubstring;
+    return noteTitleList;
   }
 
   exports.NoteView = NoteView;
