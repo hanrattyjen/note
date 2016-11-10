@@ -8,7 +8,7 @@
   NoteView.prototype.html = function(noteSubstring) {
     var htmlString = "<ul>";
     for (var i = 0; i < noteSubstring.length; i++) {
-      htmlString += "<li><div>" + noteSubstring[i] + "</div></li>";
+      htmlString += "<li>" + "<a href=\"#notes/" + i + "\"><div>" + noteSubstring[i] + "</div></a></li>";
     }
     htmlString += "</ul>";
     return htmlString;

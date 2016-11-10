@@ -10,3 +10,4 @@ noteList.addNote("Favourite planet: mars");
 var noteView = new NoteView(noteList);
 var noteController = new NoteController(noteView);
 noteController.showList();
+noteController.makeUrlChangeShowNotesforCurrentPage();
